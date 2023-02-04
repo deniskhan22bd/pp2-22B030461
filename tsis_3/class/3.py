@@ -10,5 +10,5 @@ class Rectangle(Shape):
     def area(self):
         print(self.lenght * self.width)
 
-s = Rectangle(10, 13)
+s = Rectangle(lenght = 10, width = 5)
 s.area()
