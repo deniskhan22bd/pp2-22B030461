@@ -1,6 +1,6 @@
 import json
 
-f = open("sample.json")
+f = open("tsis_4\json\sample.json")
 
 data = json.load(f)
 
