@@ -48,6 +48,7 @@ print(r)
 """
 r = re.sub(r"[ ,.]", ":", data)
 print(r)
+
 """
 
 #7
@@ -74,11 +75,12 @@ print(r)
 
 #9
 """
-s = "WordWordWWWWWWWord"
-r = re.findall(r"[A-Z][a-z]*", s)
-print(" ".join(r))
-r = re.findall(r"[A-Z][a-z]*", data)
-print(" ".join(r))
+def insert_space(match):
+    return match.group(1) + " " + match.group(2)
+
+s = "aBSdsbsbdbSBSBsbsdbsdbsSBSBSDBSBSD"
+r = re.sub(r"(.*?)([A-Z])", insert_space, s)
+print(r)
 """
 
 #10
