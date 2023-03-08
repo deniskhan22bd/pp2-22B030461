@@ -1,9 +1,18 @@
 import math
 import time
-#1
+#1.1
 """
 nums = [13, 5, 613, 5, 31, 4, 5, 6]
 print(math.prod(nums))
+"""
+
+#1.2
+"""
+nums = [13, 5, 613, 5, 31, 4, 5, 6]
+prod = 1
+for i in nums:
+    prod *= i
+print(prod)
 """
 
 #2
