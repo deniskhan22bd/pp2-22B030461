@@ -9,12 +9,11 @@ pygame.display.set_caption("1 task")
 image = pygame.image.load(r"tsis_7\1\images\clock.png")
 min_arr = pygame.image.load(r"tsis_7\1\images\min.png")
 sec_arr = pygame.image.load(r"tsis_7\1\images\sec.png")
-angle = 1
 
 date = datetime.datetime.today()
 seconds = date.second
 minutes = date.minute
-print(minutes)
+
 running = True
 while running:
     rotated_min = pygame.transform.rotate(min_arr, -50 - (minutes * 6))
@@ -26,6 +25,8 @@ while running:
     screen.blit(image, (0, 0))
     screen.blit(rotated_min, rotated_min_rect)
     screen.blit(rotated_sec, rotated_sec_rect)
+
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
