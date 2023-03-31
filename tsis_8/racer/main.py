@@ -41,7 +41,7 @@ class Enemy(pygame.sprite.Sprite):
         if self.rect.y < H - 20:
             self.rect.y += Speed
         else:
-            self.rect.center = (random.randint(200, W - 200), 75)
+            self.rect.center = (random.randint(200, W - 200), 0)
 
 class Coin(pygame.sprite.Sprite):
     def __init__(self):
@@ -73,7 +73,7 @@ while running:
     pygame.draw.line(screen, "white", (150, 0), (150, H), 10)
     pygame.draw.line(screen, "white", (W - 150, 0), (W - 150, H), 10)
     Score = small_font.render(f"Score:{SCORE}", True, "Red")
-    screen.blit(Score, (0, 0))
+    screen.blit(Score, (670, 0))
 
     #Moves and Re-draws all Sprites
     for entity in all_sprites:
@@ -83,7 +83,7 @@ while running:
 
     #To be run if collision occurs between Player and Enemy and Player and Coin
     if pygame.sprite.spritecollideany(P1, enemies):
-        time.sleep(0.5)
+        time.sleep(0.1)
         screen.fill("RED")
         screen.blit(big_font.render("Game Over", True, "Black"), (200, 350))
         pygame.display.update()
@@ -94,7 +94,7 @@ while running:
 
     if pygame.sprite.spritecollideany(P1, coins):
         SCORE += 1
-        Speed += 0.5
+        #Speed += 0.5
         coins.update()
 
     clock.tick(FPS)
